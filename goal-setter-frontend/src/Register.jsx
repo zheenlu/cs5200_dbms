@@ -6,14 +6,18 @@ function Register(props) {
     const [name, setName] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(name);
         console.log(email);
+        console.log(password);
     }
 
     return (
         <div className="auto-form-container">
-            <form onSubmit={handleSubmit}>
+            <h2>Register</h2>
+            <form className="register-form" onSubmit={handleSubmit}>
                 <label htmlFor="name">Full name</label>
                 <input value={name} name="name"
+                       onChange={(e) => setName(e.target.value)}
                         placeholder="Full Name"/>
                 <label for="email">email</label>
                 <input value={email}
@@ -31,7 +35,7 @@ function Register(props) {
                        name="password"/>
                 <button type="submit">Log In</button>
             </form>
-            <button onClick={() => props.onFormSwitch('login')}>Already have an account? Login here</button>
+            <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here</button>
         </div>
     )
 }

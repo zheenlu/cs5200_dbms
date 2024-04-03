@@ -6,11 +6,13 @@ function Login(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(email);
+        console.log(password);
     }
 
     return (
-        <div className="auth-form-container">
-            <form onSubmit={handleSubmit}>
+        <div className="auto-form-container">
+            <h2>Login</h2>
+            <form className="login-form" onSubmit={handleSubmit}>
                 <label for="email">email</label>
                 <input value={email}
                        onChange={(e) => setEmail(e.target.value)}
@@ -27,7 +29,7 @@ function Login(props) {
                        name="password"/>
                 <button type="submit">Log In</button>
             </form>
-            <button onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here</button>
+            <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here</button>
         </div>
     )
 }

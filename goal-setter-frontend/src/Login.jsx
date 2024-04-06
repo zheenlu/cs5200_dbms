@@ -13,7 +13,7 @@ function Login(props) {
         <div className="auto-form-container">
             <h2>Login</h2>
             <form className="login-form" onSubmit={handleSubmit}>
-                <label for="email">email</label>
+                <label htmlFor="email">email</label>
                 <input value={email}
                        onChange={(e) => setEmail(e.target.value)}
                        type="email"
